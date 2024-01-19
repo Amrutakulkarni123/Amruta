@@ -21,22 +21,21 @@ ChromeDriver driver =new ChromeDriver();
 		driver.manage().window().maximize();
 		
 		//identifying the elements
-		driver.findElement(By.xpath("//p[@class=\"top\"]/input")).sendKeys("DemoCSR");
+		driver.findElement(By.xpath("//input[@class='inputLogin']")).sendKeys("DemoCSR");
 		
-		driver.findElement(By.xpath("//p[@class=\"top\"]/input/following::input")).sendKeys("crmsfa");
+		driver.findElement(By.xpath("//input[@id=\"password\"]")).sendKeys("crmsfa");
 		
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[contains(@class,'ecor')]")).click();
-		driver.findElement(By.xpath("//div[@id=\"label\"]/a")).click();
-		driver.findElement(By.xpath("//div[@class=\"frameSectionBody\"]//li/a")).click();
-		driver.findElement(By.xpath("//div[@class=\"fieldgroup-body\"]//td/span/following::input")).sendKeys("Groupsoft");
-		
+		driver.findElement(By.xpath("//a[contains(text(),'CRM/SFA')]")).click();
+		driver.findElement(By.xpath("//a[contains(text(),'Create Lead')]")).click();
+		driver.findElement(By.xpath("//input[@class=\"inputBox\"]")).sendKeys("Groupsoft");
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
-		driver.findElement(By.xpath("//div[@class=\"fieldgroup-body\"]//td/span/following::input[3]")).sendKeys("Amruta");
+		driver.findElement(By.xpath("//input[contains(@id,'fir')]")).sendKeys("Amruta");
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[@class=\"fieldgroup-body\"]//td/span/following::input[4]")).sendKeys("Kulkarni");
+		driver.findElement(By.xpath("//input[contains(@id,'las')]")).sendKeys("Kulkarni");
 		driver.findElement(By.xpath("//input[@name=\"departmentName\"]")).sendKeys("QA");
 		driver.findElement(By.xpath("//input[@id=\"createLeadForm_primaryEmail\"]")).sendKeys("AK@gmail.com");
 		driver.findElement(By.xpath("//textarea[@id=\"createLeadForm_description\"]")).sendKeys("gfydgdj udho udhu");
